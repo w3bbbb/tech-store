@@ -41,4 +41,4 @@ jobs:
           docker pull w3bbbb/tech-store
           docker stop w3bbbb/tech-store || true
           docker rm w3bbbb/tech-store || true
-          docker run -d --name tech-store-test-prod -p 80:80 w3bbbb/tech-store
+          docker run -d --name w3bbbb/tech-store -p 80:80 w3bbbb/tech-store
