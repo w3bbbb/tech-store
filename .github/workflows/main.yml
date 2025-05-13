@@ -34,10 +34,10 @@ jobs:
         run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u ${{ secrets.DOCKER_USERNAME }} --password-stdin
 
       - name: Build Docker image
-        run: docker build -t w3bbbb/tech-store .
+        run: docker build -t w3bbbb_tech-store .
 
       - name: Push image to Docker Hub
-        run: docker push w3bbbb/tech-store
+        run: docker push w3bbbb_tech-store
 
   deploy:
     needs: push
@@ -54,8 +54,8 @@ jobs:
         run: |
           ssh -i ~/.ssh/id_ed25519 ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }} << 'EOF'
             echo "Connected to VPS"
-            docker pull w3bbbb/tech-store
-            docker stop w3bbbb/tech-store || true
-            docker rm w3bbbb/tech-store || true
-            docker run -d --name w3bbbb/tech-store -p 80:80 w3bbbb/tech-store
+            docker pull w3bbbb_tech-store
+            docker stop w3bbbb_tech-store || true
+            docker rm w3bbbb_tech-store || true
+            docker run -d --name w3bbbb_tech-store -p 80:80 w3bbbb_tech-store
           EOF
