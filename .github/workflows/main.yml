@@ -55,7 +55,7 @@ jobs:
           ssh -i ~/.ssh/id_ed25519 ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }} << 'EOF'
             echo "Connected to VPS"
             docker pull w3bbbb/tech-store
-            docker stop w3bbbb/tech-store || true
-            docker rm w3bbbb/tech-store || true
-            docker run -d --name w3bbbb/tech-store -p 80:80 w3bbbb/tech-store
+            docker stop tech-store || true
+            docker rm tech-store || true
+            docker run -d --name tech-store -p 80:80 w3bbbb/tech-store
           EOF
