@@ -1,7 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Quantico:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-a.active hr{
-    display: block;
+a.active hr {
+  display: block;
+}
+
+*{
+    font-family: Outfit;
+}
+
+.quantico-regular {
+  font-family: "Quantico", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.quantico-bold {
+  font-family: "Quantico", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.quantico-regular-italic {
+  font-family: "Quantico", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.quantico-bold-italic {
+  font-family: "Quantico", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+@media (max-width:640px) {
+  a.active {
+    background-color: black;
+    color: white
+  }
 }

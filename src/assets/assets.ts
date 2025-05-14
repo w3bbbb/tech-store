@@ -1,4 +1,8 @@
-import p_img1 from "./p_img1.png";
+import cpu_img from "./cpu_img.jpg";
+import gpu_img from "./gpu_img.jpg";
+import ram_img from "./ram_img.jpg";
+import ssd_img from "./ssd_img.jpg";
+import motherboard_img from "./motherboard_img.jpg";
 
 import logo from "./logo.png";
 import hero_img from "./hero_img.png";
@@ -42,16 +46,69 @@ export const assets = {
 
 export const products = [
   {
-    _id: "aaaaa",
-    name: "Women Round Neck Cotton Top",
+    _id: "comp001",
+    name: "Intel Core Ultra 9 285",
     description:
-      "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment.",
-    price: 100,
-    image: [p_img1],
-    category: "Women",
-    subCategory: "Topwear",
-    sizes: ["S", "M", "L"],
+      "A high-performance 13th Gen processor from Intel with 24 cores, ideal for gaming and content creation. Supports PCIe 5.0 and DDR5 memory.",
+    price: 599,
+    image: [cpu_img],
+    category: "Computer",
+    subCategory: "Processor",
+    sizes: ["Standard"],
     date: 1716634345448,
     bestseller: true,
   },
+  {
+    _id: "comp002",
+    name: "GIGABYTE AOURUS MASTER GeForce RTX 5080 OC",
+    description:
+      "Top-tier graphics card with ray tracing and DLSS 3.0 support, built for 4K gaming and AI workloads.",
+    price: 1199,
+    image: [gpu_img],
+    category: "Computer",
+    subCategory: "Graphics Card",
+    sizes: ["Standard"],
+    date: 1716634345448,
+    bestseller: true,
+  },
+  {
+    _id: "comp003",
+    name: "TEAMGROUP T-FORCE DELTA RGB DDR5 32GB",
+    description:
+      "High-speed DDR5 memory for gaming and multitasking, with customizable RGB lighting.",
+    price: 189,
+    image: [ram_img],
+    category: "Computer",
+    subCategory: "Memory",
+    sizes: ["32GB", "64GB"],
+    date: 1716634345448,
+    bestseller: false,
+  },
+  {
+    _id: "comp004",
+    name: "Kingston Fury Renegade 4TB NVMe PCIE 4.0",
+    description:
+      "Ultrafast internal SSD with PCIe Gen4 interface, suitable for high-speed gaming and professional workloads.",
+    price: 129,
+    image: [ssd_img],
+    category: "Computer",
+    subCategory: "Storage",
+    sizes: ["1TB", "2TB"],
+    date: 1716634345448,
+    bestseller: true,
+  },
+  {
+    _id: "comp005",
+    name: "ASUS ROG Maximus Z790 FORMULA",
+    description:
+      "Premium gaming motherboard with support for Intel 13th Gen CPUs, Wi-Fi 6E, and enhanced power delivery.",
+    price: 399,
+    image: [motherboard_img],
+    category: "Computer",
+    subCategory: "Motherboard",
+    sizes: ["ATX"],
+    date: 1716634345448,
+    bestseller: false,
+  },
 ];
+
