@@ -4,6 +4,9 @@ import ram_img from "./ram_img.jpg";
 import ssd_img from "./ssd_img.jpg";
 import motherboard_img from "./motherboard_img.jpg";
 import keyboard_img from "./keyboard_img.jpg";
+import keyboard_img_2 from "./keyboard_img_2.jpg";
+import keyboard_img_3 from "./keyboard_img_3.jpg";
+import keyboard_img_4 from "./keyboard_img_4.jpg";
 
 import logo from "./logo.png";
 import hero_img from "./hero_img.png";
@@ -117,12 +120,25 @@ export const products = [
     description:
       "Premium gaming keyboard with customizable RGB lighting and mechanical optical switches.",
     price: 199,
-    image: [keyboard_img],
+    image: [keyboard_img, keyboard_img_2],
     category: "peripherals",
     subCategory: "keyboard",
     sizes: ["60"],
     date: 1716634345448,
     bestseller: false,
+  },
+  {
+    _id: "comp007",
+    name: "Redragon Draconic Pro",
+    description:
+      "Premium gaming keyboard with customizable RGB lighting and mechanical switches.",
+    price: 49,
+    image: [keyboard_img_3, keyboard_img_4],
+    category: "peripherals",
+    subCategory: "keyboard",
+    sizes: ["60"],
+    date: 1716634345448,
+    bestseller: true,
   },
 ];
 
