@@ -3,6 +3,7 @@ import gpu_img from "./gpu_img.jpg";
 import ram_img from "./ram_img.jpg";
 import ssd_img from "./ssd_img.jpg";
 import motherboard_img from "./motherboard_img.jpg";
+import keyboard_img from "./keyboard_img.jpg";
 
 import logo from "./logo.png";
 import hero_img from "./hero_img.png";
@@ -52,8 +53,8 @@ export const products = [
       "A high-performance 13th Gen processor from Intel with 24 cores, ideal for gaming and content creation. Supports PCIe 5.0 and DDR5 memory.",
     price: 599,
     image: [cpu_img],
-    category: "Computer",
-    subCategory: "Processor",
+    category: "components",
+    subCategory: "processor",
     sizes: ["Standard"],
     date: 1716634345448,
     bestseller: true,
@@ -65,8 +66,8 @@ export const products = [
       "Top-tier graphics card with ray tracing and DLSS 3.0 support, built for 4K gaming and AI workloads.",
     price: 1199,
     image: [gpu_img],
-    category: "Computer",
-    subCategory: "Graphics Card",
+    category: "components",
+    subCategory: "graphics",
     sizes: ["Standard"],
     date: 1716634345448,
     bestseller: true,
@@ -78,8 +79,8 @@ export const products = [
       "High-speed DDR5 memory for gaming and multitasking, with customizable RGB lighting.",
     price: 189,
     image: [ram_img],
-    category: "Computer",
-    subCategory: "Memory",
+    category: "components",
+    subCategory: "memory",
     sizes: ["32GB", "64GB"],
     date: 1716634345448,
     bestseller: false,
@@ -91,9 +92,9 @@ export const products = [
       "Ultrafast internal SSD with PCIe Gen4 interface, suitable for high-speed gaming and professional workloads.",
     price: 129,
     image: [ssd_img],
-    category: "Computer",
-    subCategory: "Storage",
-    sizes: ["1TB", "2TB"],
+    category: "components",
+    subCategory: "storage",
+    sizes: ["4TB", "5TB"],
     date: 1716634345448,
     bestseller: true,
   },
@@ -104,9 +105,22 @@ export const products = [
       "Premium gaming motherboard with support for Intel 13th Gen CPUs, Wi-Fi 6E, and enhanced power delivery.",
     price: 399,
     image: [motherboard_img],
-    category: "Computer",
-    subCategory: "Motherboard",
+    category: "components",
+    subCategory: "motherboard",
     sizes: ["ATX"],
+    date: 1716634345448,
+    bestseller: false,
+  },
+  {
+    _id: "comp006",
+    name: "Logitech Pro X 60",
+    description:
+      "Premium gaming keyboard with customizable RGB lighting and mechanical optical switches.",
+    price: 199,
+    image: [keyboard_img],
+    category: "peripherals",
+    subCategory: "keyboard",
+    sizes: ["60"],
     date: 1716634345448,
     bestseller: false,
   },
