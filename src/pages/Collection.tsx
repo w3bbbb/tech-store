@@ -11,6 +11,7 @@ const Collection = () => {
   const [filterProducts, setFilterProducts] = useState<Product[]>([]);
   const [category, setCategory] = useState<string[]>([]);
   const [subCategory, setSubCategory] = useState<string[]>([]);
+  const [sort, setSort] = useState<string>("relavent");
 
   const handleCategory = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (category.includes(e.target.value)) {
@@ -36,7 +37,6 @@ const Collection = () => {
         category.includes(item.category)
       );
     }
-
     if (subCategory.length > 0) {
       filteredProducts = filteredProducts.filter((item: Product) =>
         subCategory.includes(item.subCategory)
@@ -46,9 +46,29 @@ const Collection = () => {
     setFilterProducts(filteredProducts);
   };
 
+  const sortProduct = () => {
+    let filteredProductsCopy = filterProducts.slice();
+
+    switch (sort) {
+      case "low-high":
+        setFilterProducts(filteredProductsCopy.sort((a, b) => a.price - b.price));
+        break;
+      case "high-low":
+        setFilterProducts(filteredProductsCopy.sort((a, b) => b.price - a.price));
+        break;
+      default:
+        applyFilter();
+        break;
+    }
+  };
+
   useEffect(() => {
     applyFilter();
   }, [category, subCategory]);
+
+  useEffect(() => {
+    sortProduct();
+  }, [sort]);
 
   return (
     <div className="flex flex-col sm:flex-row gap-1 sm:gap-10 pt-10 border-t">
@@ -154,7 +174,10 @@ const Collection = () => {
           <Title text1={"ALL"} text2={"COLLECTIONS"} />
 
           {/* Product Sort */}
-          <select className="border-2 border-gray-300 text-sm px-2">
+          <select
+            onChange={(e) => setSort(e.target.value)}
+            className="border-2 border-gray-300 text-sm px-2"
+          >
             <option value="relavent" className="text-sm">
               Sort by: Relavent
             </option>
