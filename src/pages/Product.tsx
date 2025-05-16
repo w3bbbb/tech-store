@@ -7,7 +7,7 @@ import RelatedProducts from "../components/RelatedProducts";
 
 const Product = () => {
   const { productId } = useParams();
-  const { products, currency } = useContext(ShopContext);
+  const { products, currency, addToCart } = useContext(ShopContext);
   const [productData, setProductData] = useState<Product | null>(null);
   const [image, setImage] = useState("");
   const [size, setSize] = useState("");
@@ -70,14 +70,25 @@ const Product = () => {
           <div className="flex flex-col gap-4 my-8">
             <p>Select Size</p>
             <div className="flex gap-2">
-              {
-                productData.sizes.map((item: string, index: number) => (
-                  <button onClick={()=>setSize(item)} className={`border py-2 px-4 bg-gray-100 rounded-lg ${item === size ? 'border-2 border-gray-400' : ''}`} key={index}>{item}</button>
-                ))
-              }
+              {productData.sizes.map((item: string, index: number) => (
+                <button
+                  onClick={() => setSize(item)}
+                  className={`border py-2 px-4 bg-gray-100 rounded-lg ${
+                    item === size ? "border-2 border-gray-400" : ""
+                  }`}
+                  key={index}
+                >
+                  {item}
+                </button>
+              ))}
             </div>
           </div>
-          <button className="bg-black text-white px-8 py-3 text-sm rounded-lg active:bg-gray-700">ADD TO CART</button>
+          <button
+            onClick={() => addToCart(productData._id, size)}
+            className="bg-black text-white px-8 py-3 text-sm rounded-lg active:bg-gray-700"
+          >
+            ADD TO CART
+          </button>
           <hr className="mt-8 sm:w-4/5" />
           <div className="text-sm text-gray-500 mt-5 flex flex-col gap-1">
             <p>100% Original product.</p>
@@ -101,18 +112,21 @@ const Product = () => {
             providing faster data transfer rates and improved performance.
           </p>
           <p>
-            The Ultra 9 285 features Intel's latest architecture, which
-            enhances power efficiency and performance. It also includes Intel's
-            Turbo Boost technology, allowing the processor to automatically
-            increase its clock speed for demanding applications. With a base
-            clock speed of 3.0 GHz and a turbo boost frequency of up to 5.0 GHz,
-            the Ultra 9 285 delivers exceptional performance for gaming and
-            content creation tasks.
+            The Ultra 9 285 features Intel's latest architecture, which enhances
+            power efficiency and performance. It also includes Intel's Turbo
+            Boost technology, allowing the processor to automatically increase
+            its clock speed for demanding applications. With a base clock speed
+            of 3.0 GHz and a turbo boost frequency of up to 5.0 GHz, the Ultra 9
+            285 delivers exceptional performance for gaming and content creation
+            tasks.
           </p>
         </div>
       </div>
       {/* Similar Products */}
-      <RelatedProducts category={productData.category} subCategory={productData.subCategory} />
+      <RelatedProducts
+        category={productData.category}
+        subCategory={productData.subCategory}
+      />
     </div>
   ) : (
     <div className="opacity-0"></div>
