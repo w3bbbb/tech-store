@@ -10,7 +10,7 @@ const LatestCollection = () => {
 
   useEffect(() => {
     setLatestProducts(products);
-  }, []);
+  }, [products]);
 
   return (
     <div className="my-10">

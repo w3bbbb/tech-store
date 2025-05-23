@@ -60,7 +60,7 @@ export const products = [
     subCategory: "processor",
     sizes: ["Standard"],
     date: 1716634345448,
-    bestseller: true,
+    bestSeller: true,
   },
   {
     _id: "comp002",
@@ -73,7 +73,7 @@ export const products = [
     subCategory: "graphics",
     sizes: ["Standard"],
     date: 1716634345448,
-    bestseller: true,
+    bestSeller: true,
   },
   {
     _id: "comp003",
@@ -86,7 +86,7 @@ export const products = [
     subCategory: "memory",
     sizes: ["32GB", "64GB"],
     date: 1716634345448,
-    bestseller: false,
+    bestSeller: false,
   },
   {
     _id: "comp004",
@@ -99,7 +99,7 @@ export const products = [
     subCategory: "storage",
     sizes: ["4TB", "5TB"],
     date: 1716634345448,
-    bestseller: true,
+    bestSeller: true,
   },
   {
     _id: "comp005",
@@ -112,7 +112,7 @@ export const products = [
     subCategory: "motherboard",
     sizes: ["ATX"],
     date: 1716634345448,
-    bestseller: false,
+    bestSeller: false,
   },
   {
     _id: "comp006",
@@ -125,7 +125,7 @@ export const products = [
     subCategory: "keyboard",
     sizes: ["60"],
     date: 1716634345448,
-    bestseller: false,
+    bestSeller: false,
   },
   {
     _id: "comp007",
@@ -138,7 +138,7 @@ export const products = [
     subCategory: "keyboard",
     sizes: ["60"],
     date: 1716634345448,
-    bestseller: true,
+    bestSeller: true,
   },
 ];
 

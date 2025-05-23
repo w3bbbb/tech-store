@@ -8,5 +8,5 @@ export type Product = {
   subCategory: string,
   sizes: string[],
   date: string,
-  bestseller: boolean,
+  bestSeller: boolean,
 };
