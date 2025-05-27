@@ -79,6 +79,23 @@ const PlaceOrder = () => {
             toast.error(response.data.message);
           }
           break;
+        case "stripe":
+          const stripeResponse = await axios.post(
+            `${backendUrl}/api/order/stripe`,
+            orderData,
+            {
+              headers: {
+                Authorization: `Bearer ${token}`,
+              },
+            }
+          ); 
+          if (stripeResponse.data.success) {
+            const  { url } = stripeResponse.data; 
+            window.location.replace(url);
+          } else {
+            toast.error(stripeResponse.data.message);
+          }
+          break;
         default:
           break;
       }
@@ -199,7 +216,7 @@ const PlaceOrder = () => {
               ></p>
               <img className="h-5 mx-4" src={assets.stripe_logo} alt="logo" />
             </div>
-            <div
+            {/* <div
               onClick={() => setMethod("razorpay")}
               className="flex items-center gap-3 border p-2 px-3 rounded-md cursor-pointer"
             >
@@ -209,7 +226,7 @@ const PlaceOrder = () => {
                 }`}
               ></p>
               <img className="h-5 mx-4" src={assets.razorpay_logo} alt="logo" />
-            </div>
+            </div> */}
             <div
               onClick={() => setMethod("cod")}
               className="flex items-center gap-3 border p-2 px-3 rounded-md cursor-pointer"
